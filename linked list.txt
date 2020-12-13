@@ -1,0 +1,122 @@
+
+#include <iostream>
+using namespace std;
+struct node
+{
+    int data;
+    node *next;
+    
+};
+bool isempty(node *head)
+{
+    if(head==NULL)
+    return true;
+    else return false;
+}
+int menu()
+{  int t;
+    cout<<"MENU \n";
+    cout<<"1. Add an item \n";
+    cout<<"2. Remove an item \n";
+    cout<<"3. Printlist \n";
+    cout<<"4. Exit \n";
+    cin>>t;
+    return t;
+}
+void addfirstele(node *&head,node *&last, int number)
+{
+    node *current = new node;
+    current ->data=number;
+    current ->next=NULL;
+    head=current;
+    last=current;
+    
+}
+
+void addele(node *&head, node *&last, int number)
+{
+    if(isempty(head))
+    {
+        addfirstele( head, last, number);
+    }
+    else
+    {
+        node *current= new node;
+        current->data=number;
+        current->next=NULL;
+       last->next=current;
+       last=current;
+    }
+}
+
+void removele(node *&head, node *&last)
+{
+     if(isempty(head))
+    {
+        cout<<"The list is already empty"<<endl;
+    }
+    else if (head==last)
+    {
+        delete head;
+        head=NULL;
+        last=NULL;
+        
+    }
+    else
+    {
+        node *temp=head;
+       // temp=head;
+       
+        head=head->next;
+        delete temp;
+    }
+}
+
+void printlist(node *head)
+{
+    if(isempty(head))
+    cout<<"No element"<<endl;
+   else{
+    while(head)
+    {
+        cout<<head->data<<endl;
+        head=head->next;
+    }
+   }
+}
+
+int main()
+{
+   node *head=NULL;
+   node *last=NULL;
+   int k;
+
+
+   cout<<"------------>  INSPARK PROJECT BY NILESH VERMA "<<endl;
+   
+   cout<<"------------>  Prototype for managing sofwares using linked list "<<endl;
+
+
+
+   do{
+       k=menu();
+       switch(k)
+       {
+           case 1: cout<<"Please enter an element"<<endl;
+                    int l;
+                    cin>>l;
+                    addele(head,last,l);
+                      break;
+            case 2: cout<<"Removing element from last"<<endl;
+
+                  removele(head,last);
+               break;
+            case 3: printlist(head);
+               break;
+         
+         default:cout<<"SYS EXIT CODE 101"<<endl ;    
+             break;
+       }
+   }
+   while(k!=4);
+}

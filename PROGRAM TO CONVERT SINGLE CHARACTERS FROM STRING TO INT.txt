@@ -1,0 +1,25 @@
+#include <iostream>
+#include<string.h>
+#include <bits/stdc++.h> 
+using namespace std;
+#define ull unsigned long long int 
+#define fo(i,a,b) for(ull i=a;i<b;i++)
+#define rfo(i,b,a) for(int i=b;i>=a;i--)
+int main() 
+{
+ string s;
+ cin>>s;
+ int n=s.size();
+ int a[n],l=0,i;
+ for(i=0;i<n;i=i+2)
+ {
+     a[l]=s[i]-'0';
+     l++;
+ }
+ sort(a,a+l);
+  for(i=0;i<l;i++)
+ {
+     cout<<a[i]<<endl;
+     
+ }
+}
