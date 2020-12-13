@@ -1,0 +1,57 @@
+#include <bits/stdc++.h> 
+#include <stdio.h> 
+using namespace std;
+
+int combinationUtil(int arr[], int n, int r, 
+					int index, int data[], int i,int t); 
+
+void printCombination(int arr[], int n, int r,int t) 
+{ 
+ 
+	int data[r]; 
+
+
+	combinationUtil(arr, n, r, 0, data, 0); 
+} 
+
+
+int combinationUtil(int arr[], int n, int r, int index, 
+					int data[], int i,int t) 
+{ 
+ static int q=0;
+	if (index == r) { 
+// 		for (int j = 0; j < r; j++) 
+// 			cout<< data[j]; 
+// 		cout<<"\n"; 
+
+      if(data[0]+data[1]+data[2]+data[3]==t)
+      {q++;
+          }
+		return q ; 
+	} 
+
+	
+	if (i >= n) 
+		return; 
+
+
+	data[index] = arr[i]; 
+	combinationUtil(arr, n, r, index + 1, data, i + 1); 
+
+
+	combinationUtil(arr, n, r, index, data, i + 1); 
+} 
+
+
+int main() 
+{  int n,t;
+cin>>n>>t;
+	int arr[n];
+	for(int k=0;k<n;k++)
+	{cin>>arr[k];
+	    }
+
+
+cout<<	printCombination(arr, n, 4,t); 
+ 
+} 

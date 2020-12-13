@@ -1,0 +1,27 @@
+// CPP code to demonstrate  
+// (const char* chars, size_type chars_len) 
+  
+#include <iostream> 
+#include <string> 
+using namespace std; 
+   
+// Function to demonstrate append 
+void appendDemo(string str) 
+{ 
+    // Appends 5 characters from "GeeksforGeeks" 
+    // to str 
+    str.append("GeeksforGeeks", 5); 
+    cout << "Using append() : "; 
+    cout << str << endl; 
+} 
+   
+// Driver code 
+int main() 
+{ 
+    string str("World of "); 
+   
+    cout << "Original String : " << str << endl; 
+    appendDemo(str); 
+   
+    return 0; 
+} 

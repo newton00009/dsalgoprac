@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include<algorithm>
+using namespace std;
+int main()
+{int n;
+cin>>n;
+    int a[n];
+ for(int k=0;k<n;k++)
+   {cin>>a[k];}
+ int d;
+ d=*max_element (a,a+n);
+ 
+cout<<d;
+cout<<*min_element (a,a+n);
+//or cout<<*max_element (a,a+n);
+
+
+
+}

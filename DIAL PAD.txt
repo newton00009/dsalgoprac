@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *p(int i)
+{     if(i==1)
+    {static char r[]={'a','b','c'};
+        return r;}
+     else if(i==2)
+     {static char r[]={'d','e','f'};
+        return r;}
+     else if(i==3)
+     {static char r[]={'g','h','i'};
+        return r;}
+     else if(i==4)
+     {static char r[]={'j','k','l'};
+        return r;}
+     else if(i==5)
+     {static char r[]={'m','n','o'};
+        return r;}
+      else if(i==6)
+     {static char r[]={'p','q','r'};
+        return r;}
+      else if(i==7)
+     {static char r[]={'s','t','u'};
+        return r;}
+      else if(i==8)
+     {static char r[]={'v','w','x'};
+        return r;}
+      else if(i==9)
+     {static char r[]={'y','z'};
+        return r;}
+}
+int main()
+{
+    int x,m,a=3,b=3;
+    scanf("%d",&x);
+    m=x%10;
+    x=(x-m)/10;
+    char *l=p(m);
+    char *t=p(x);
+    if(m==9) b=2;
+    else if(x==9) a=2;
+
+    for(x=0;x<a;x++)
+    {for(m=0;m<b;m++)
+          {printf("%c%c \n",*(t+x),*(l+m));}
+
+    }
+}

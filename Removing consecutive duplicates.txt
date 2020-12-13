@@ -1,0 +1,33 @@
+#include <iostream>
+#include<string.h>
+#include <bits/stdc++.h> 
+using namespace std;
+#define ull unsigned long long int 
+#define fo(i,a,b) for(ull i=a;i<b;i++)
+#define rfo(i,b,a) for(int i=b;i>=a;i--)
+int main() 
+{ ull n,k=1,m=0;
+  cin>>n;
+  string s;
+  cin>>s;
+  char a=s[0];
+  while(k!=n)
+  {
+     if(s[k]==a)
+     {
+         s.erase(k,1);
+         k--;
+        n--;
+         m++;
+     }
+     else {
+         a=s[k];
+     } 
+      
+      
+      
+    k++;  
+  }
+
+ cout<<m;
+}

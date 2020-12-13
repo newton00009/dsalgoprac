@@ -1,0 +1,15 @@
+
+#include <iostream>
+#include <string>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+int main()
+{int n;
+cin>>n;
+    int a[n];
+    
+ iota(a, a+n, n);
+ for(int k=0;k<n;k++)
+ {cout<<a[k]<<endl;}
+}
