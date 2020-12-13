@@ -1,0 +1,41 @@
+#include <iostream>
+#include<string.h>
+#include <bits/stdc++.h> 
+using namespace std;
+#define ull unsigned long long int
+ull i,j;
+#define fo(a,b) for(i=a;i<b;i++)
+#define rfo(i,b,a) for(i=b;i>=a;i--)
+void get(ull a[],ull n)
+{
+    for(i=0;i<n;i++)
+	     {
+	         cin>>a[i];
+	     }
+}
+void put(ull a[],ull n)
+{
+    for(i=0;i<n;i++)
+	     {
+	         cout<<a[i]<<" ";
+	     }
+	     cout<<endl;
+}
+int main() 
+{
+   ull t;
+   cin>>t;
+   while(t--)
+	{
+         ull n;
+         cin>>n;
+	     ull a[n];
+	     get(a,n);
+	  
+	   //  for(i=0;i<n;i++)
+	   //  {
+	   //      cin>>a[i]
+	   //  }
+
+     }
+}
